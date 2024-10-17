@@ -1,0 +1,13 @@
+<apex:page controller="AccountController">
+    <apex:form >
+        <apex:pageBlock title="New Account">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!newAccount.Name}" />
+                <apex:inputField value="{!newAccount.Phone}" />
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveAccount}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

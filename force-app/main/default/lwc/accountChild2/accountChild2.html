@@ -1,0 +1,17 @@
+<template>
+    {searchTextChild2}
+
+    {currentid}
+    {currentname}
+
+    <lightning-datatable
+   
+    key-field=""
+    data= {accRecords.data}
+    columns= {columns}
+    hide-checkbox-column="true"
+    onrowaction={handleRowAction}
+
+    ></lightning-datatable>
+
+</template>

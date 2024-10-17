@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="IMDB Integration with Salesforce">
+        <lightning-layout>
+            <!-- Movie Search Input Field -->
+            <lightning-layout-item size="12">
+                <lightning-input 
+                    label="Enter Movie Name" 
+                    onchange={handleChange}
+                    placeholder="Search for a movie"
+                ></lightning-input>
+                <lightning-button 
+                    label="Search" 
+                    onclick={handleClick}
+                    variant="brand"
+                ></lightning-button>
+            </lightning-layout-item>
+
+            <!-- Search Button -->
+            <!-- <lightning-layout-item size="12" class="slds-p-bottom_xx-large">
+                
+            </lightning-layout-item> -->
+        </lightning-layout>
+        <div if:true={showText}>
+            <p style="font-size: 1.25rem; color: red;">{showText}</p>
+        </div>
+        <template if:true={movies.length}>
+            <lightning-layout multiple-rows>
+                <template for:each={movies} for:item="movie">
+                    <lightning-layout-item key={movie.imdbID} size="3" class="slds-p-around_medium">
+                        <img src={movie.Poster} alt="No Image Found" style="height: 300px; width: 200px;" />
+                        <p>Title: {movie.Title}</p>
+                        <p>Year: {movie.Year}</p>
+                        <p>IMDB ID: {movie.imdbID}</p>
+                        <p>Type: {movie.Type}</p>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>
