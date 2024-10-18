@@ -15,7 +15,7 @@ public class QueryContact {
       if(contacts != null && !contacts.isEmpty()){
           return contacts[0].Id;
       }else{
-       
+       //hgjh
     //do not modify any code above this line
     //implement the logic that will use bindVars to retrieve the contact's ID
     return null;
